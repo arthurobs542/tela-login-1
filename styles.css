@@ -99,3 +99,11 @@ body {
 .rightside .temUmaConta {
   text-decoration: none;
 }
+
+.error {
+  font-size: 11px;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+}

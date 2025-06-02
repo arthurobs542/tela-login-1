@@ -1,10 +1,19 @@
+//validador
 let validador = {
   handleSubmit: (event) => {
     event.preventDefault();
-    let send = false;
-
+    let send = true;
+    //criar para selcionar os inputs
     let inputs = form.querySelectorAll("input");
 
+    for (let i = 0; i < inputs.length; i++) {
+      let input = inputs[i];
+      let check = validador.checkInput(input);
+      if (check !== true) {
+        send = false;
+        validador.showError(input, check);
+      }
+    }
     if (send) {
       form.submit();
     }
@@ -27,7 +36,16 @@ let validador = {
     }
     return true;
   },
-};
 
+  showError: (input, error) => {
+    input.style.borderColor = "#ff0000";
+    let errorElement = document.createElement("div");
+    errorElement.classList.add("error");
+    errorElement.innerHTML = error;
+
+    input.parentElement.insertBefore(errorElement, input.ElementSibling);
+  },
+};
+//criar primeiro
 let form = document.querySelector(".validador");
 form.addEventListener("submit", validador.handleSubmit);
