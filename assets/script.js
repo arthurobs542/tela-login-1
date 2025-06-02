@@ -3,8 +3,9 @@ let validador = {
   handleSubmit: (event) => {
     event.preventDefault();
     let send = true;
-    //criar para selcionar os inputs
     let inputs = form.querySelectorAll("input");
+
+    validador.clearErrors();
 
     for (let i = 0; i < inputs.length; i++) {
       let input = inputs[i];
@@ -18,6 +19,7 @@ let validador = {
       form.submit();
     }
   },
+
   checkInput: (input) => {
     let rules = input.getAttribute("data-rules");
 
@@ -29,6 +31,24 @@ let validador = {
           case "required":
             if (input.value == "") {
               return "campo obrigatorio";
+            }
+            break;
+
+          case "min":
+            if (input.value.length < rDetails[1]) {
+              return (
+                "Campo precisa ter ao menos " + rDetails[1] + " caracteres"
+              );
+            }
+            break;
+
+          case "email":
+            if (input.value != "") {
+              let regex =
+                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              if (!regex.test(input.value.toLowerCase())) {
+                return "E-mail digitado não é válido";
+              }
             }
             break;
         }
@@ -45,7 +65,18 @@ let validador = {
 
     input.parentElement.insertBefore(errorElement, input.ElementSibling);
   },
+
+  clearErrors: () => {
+    let inputs = form.querySelectorAll("input");
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].style = " ";
+    }
+
+    let errorElements = document.querySelectorAll(".error");
+    for (let i = 0; i < errorElements.length; i++) {
+      errorElements[i].remove();
+    }
+  },
 };
-//criar primeiro
 let form = document.querySelector(".validador");
 form.addEventListener("submit", validador.handleSubmit);
