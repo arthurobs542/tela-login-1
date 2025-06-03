@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sing in 1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <div class="leftside">
+        <img src="assets/13839842_5359425.jpg" alt="" />
+      </div>
+      <div class="rightside">
+        <h1>Register</h1>
+        <form method="POST" action="cadastro.php" class="validador">
+          <label for="">
+            Digite seu nome: <br />
+            <input type="text" name="name" data-rules="required|min=2" />
+          </label>
+          <label for="">
+            Digite seu Email: <br />
+            <input type="text" name="email" data-rules="required|email" />
+          </label>
+          <label>
+            Digite sua senha:
+            <input for="password" name="'password" data-rules="required" />
+          </label>
+          <label for="">
+            <input type="submit" value="cadastre-se" class="btn-cadastre" />
+          </label>
+          <div class="temUmaConta">
+            Já tem uma conta? <a href="login.html">faça login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

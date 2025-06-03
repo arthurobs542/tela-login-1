@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5766cd;
+  margin: 0;
+}
+
+.screen {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  gap: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.leftside {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftside img {
+  max-width: 1080px;
+  border-radius: 10px;
+  height: auto;
+}
+
+.rightside {
+  font-family: "Inter", sans-serif;
+  width: 500px;
+  display: block;
+  max-width: 800px;
+  color: aliceblue;
+}
+
+.rightside h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.rightside form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+.rightside label {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.rightside input {
+  font-size: 2rem;
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+  border-radius: 10px;
+}
+
+.rightside .btn-cadastre {
+  background-color: #8a94db;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  margin: 1.5rem 0rem;
+  color: white;
+  box-sizing: 20px 40px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease;
+}
+
+.rightside .btn-cadastre:hover {
+  background-color: #5766cd;
+}
+
+.rightside .temUmaConta {
+  text-decoration: none;
+}
+
+.error {
+  font-size: 11px;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.conteiner-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteiner-login h1 {
+  font-size: 1.5rem;
+}
+
+.icons-login {
+  font-size: 3rem;
+}

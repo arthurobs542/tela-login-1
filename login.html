@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sing in 1</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Login</title>
+    <!-- font awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles-login.css" />
   </head>
   <body>
     <div class="screen">
@@ -12,12 +20,8 @@
         <img src="assets/13839842_5359425.jpg" alt="" />
       </div>
       <div class="rightside">
-        <h1>Register</h1>
+        <h1>Login</h1>
         <form method="POST" class="validador">
-          <label for="">
-            Digite seu nome: <br />
-            <input type="text" name="name" data-rules="required|min=2" />
-          </label>
           <label for="">
             Digite seu Email: <br />
             <input type="text" name="email" data-rules="required|email" />
@@ -27,10 +31,16 @@
             <input for="password" name="'password" data-rules="required" />
           </label>
           <label for="">
-            <input type="submit" value="cadastre-se" class="btn-cadastre" />
+            <input type="submit" value="Login" class="btn-cadastre" />
           </label>
-          <div class="temUmaConta">
-            Já tem uma conta? <a href="">faça login</a>
+
+          <div class="conteiner-login">
+            <h1 class="icon-login">ou faça login com <br /></h1>
+            <div class="icons-login">
+              <i class="fa-brands fa-google"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+            </div>
           </div>
         </form>
       </div>
